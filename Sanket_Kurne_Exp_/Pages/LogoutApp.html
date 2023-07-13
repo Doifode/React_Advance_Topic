@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Out Page</title>
+</head>
+<style>
+    #secondPage {
+        display: none;
+
+    }
+
+    #thirdPage {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="row" id="firstPage">
+        <div class="col-md-12">
+            <input type="text" class="form-control" id="inputName">
+        </div>
+        <div class="col-md-12">
+            <Button onclick="LogIn()">Log In</Button>
+        </div>
+    </div>
+    <div class="row" id="secondPage">
+        <div class="col-md-10">
+            <h1>Hellow<span id="userName"></span></h1>
+        </div>
+        <div class="col-md-2">
+            <Button onclick="LogOut()">Log In</Button>
+        </div>
+
+    </div>
+    <div class="row" id="thirdPage">
+        <div class="col-md-10">
+            <h1>Thank You<span id="logOutUser"></span></h1>
+        </div>
+        <div class="col-md-2">
+            <Button onclick="gotologin()">Log In Page</Button>
+        </div>
+
+    </div>
+    <script>
+        const LogIn = () => {
+            const name = document.getElementById('inputName').value;
+            document.getElementById("firstPage").style.display = "none";
+            document.getElementById("secondPage").style.display = "block";
+            document.getElementById("userName").innerText = " " + name;
+        }
+        const LogOut = () => {
+            const name = document.getElementById('inputName').value;
+
+            document.getElementById("secondPage").style.display = "none";
+            document.getElementById("thirdPage").style.display = "block";
+            document.getElementById("logOutUser").innerText = " " + name;
+
+        }
+        const gotologin = () => {
+            document.getElementById("thirdPage").style.display = "none";
+
+            document.getElementById("firstPage").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
