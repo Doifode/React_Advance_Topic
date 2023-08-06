@@ -1,0 +1,136 @@
+ For testing the components we have to invoke the test function 
+1. Its available to all  over the  react app.
+2. First argument will be  name for recognization  for  the which  test is running.
+3.Secon argument will be the  functionality which we going to test.
+4.  Third will  be  the how much time span is it  will  take to complete  the test. 
+
+Command to run test is npm run test 
+// We have to go inside that file to run  that command //
+
+TDD // Test Driven Develpment //
+TDD is the process were you write  the test cases before writing the code. 
+It carry out through 3 simple steps.
+1. Creating tet for the verifinng the functionlity of specific feature.
+2. Write software code that  will run  test  successfully when re-executed.
+3. Refactor the  code  for  optimization  while ensuring the  test  continue to pass.
+<red-green>testing 
+If the  softer is working as expected then  no need to follow third step from TDD.
+
+
+Filter the tests in JEST ;-
+ › Press f to run only failed tests.
+ › Press o to only run tests related to changed files.
+ › Press q to quit watch mode.
+ › Press p to filter by a filename regex pattern.
+ › Press t to filter by a test name regex pattern.
+ › Press Enter to trigger a test run.
+we can skip or run only needed test 
+test.only()
+test.skip()
+
+
+Groupint tests-
+In jest we have the grouping  the test  cases facilities.
+We have describe('name',fn);  block.
+
+Naming Convension for files
+.test.js/jsx  ||  .test.ts/tsx || folder __tests__/inside it any name file will work
+
+
+we can replace 
+test = it
+test.only = fit
+test.skip = xit
+
+//- CODE COVERAGE -//
+
+    "test": "react-scripts test --coverage --watchAll --collectCoverageFrom='src/Components/**/*.{js,jsx}'",
+ // Add this in package .json  file 
+
+
+ "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "statements": -10,
+        "lines": 80
+      }
+    }
+  }
+this wil be the coverage threashhold requirements 
+
+Assertions -
+matching the output with the expected values .
+
+RTL -
+ Qeries are the methods that Testing Library provides to find  elements on the  pages.
+
+Find single element - 
+getBy..
+queryBy..
+findBy..
+
+Find multiple element -
+getAllBy..
+queryAllBy..
+findAllBy..
+
+
+
+getByRole -
+used to check the tags are rendering correctly in dom or not.
+the syntax is like === 
+screen.getByRole("textbox" }) // when there is only one tag 
+
+screen.getByRole("button",{
+name:"firstName ",
+})
+We can check the  tags and the text is  rendering correctly in on dom or not using getByRole("RoleName");
+
+getByLabelText()
+used to check the tag using the label text 
+we aslo pass the object of extra information   if there are  more than  one same  text label 
+like 
+getByLabelText("name",{
+selector:"input"
+})
+getByPLaceHolderText()
+used to check element by place holder text
+
+getByText()
+used  to check element by only texts that rendering
+
+getByDisplayValue()
+used to check the input element by checking the display value in input element.
+
+getByAltText()
+ check by altenative text check for tag like img 
+getByTitle()
+check el by title of element 
+
+getByTestId()
+check by  data-id of element 
+
+We have getAllBy for multiple mapped tags in rtl.
+
+
+Apperence and DissApperience Of elements 
+
+findBy("name"{})
+findAllBy("",{})
+
+
+Debugging test 
+screen.debug()
+used to visualize the dom as per requirement
+logRoles(dom collected element) function can console the formated container of the  dom elements
+
+User Interaction testing 
+UserEvent Liabrary 
+// user-event  is always installed by default in react app 
+
+
+
+  
+

@@ -14,10 +14,11 @@ import { DownloadAnyFile } from './Components/DownloadAnyFile';
 import { TextReader } from './Components/TextReader';
 import { WebCam } from './Components/WebCam';
 import { TimeZone } from './Components/TimeZone';
-import PreventURLMatch from './Components/PreventURLMatch';
+// import PreventURLMatch from './Components/PreventURLMatch';
 import Pdfviewer from './Components/Pdfviewer';
 import VoiceListener from './Components/VoiceListener';
 import { TextEditor } from './Components/TextEditor';
+// import { Charts } from './Components/Charts';
 // import PreventReloding from './Components/PreventReloding';
 
 
@@ -60,6 +61,7 @@ function App() {
             <Route path='/PdfViewer' element={<Pdfviewer />} />
             <Route path='/voiceListener' element={<VoiceListener />} />
             <Route path='/TextEditor' element={<TextEditor />} />
+            {/* <Route path='/chartsApp' element={<Charts />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

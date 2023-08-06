@@ -1,0 +1,9 @@
+Typescript is a super set of javascript.
+TypeScript can do all that js can do but also adds extra features in it.
+Typescript adds type safety in javascript. 
+Eg. interface,types, aliases, abstract classes, functions overloading tuple and generics etc. 
+
+Typescript is statically typed language.
+Static language - it will check
+TypeScript is just an development tool while your all code will transpile to JavaScript finally.
+

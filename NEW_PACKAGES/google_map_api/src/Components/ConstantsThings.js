@@ -349,4 +349,11 @@ export const CountryTimeZone = [
     'Pacific/Apia',
     'Africa/Johannesburg'
 ];
- 
+
+export const lineChartData = {
+    labels: ['jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    dataSets: {
+        label: "Sale For 2023",
+        data: [3, 2, 6, 2, 7]
+    }
+}
