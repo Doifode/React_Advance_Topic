@@ -14,8 +14,8 @@ export const Index = () => {
                 <TabNav.Screen name="Login" component={Login}></TabNav.Screen>
                 <TabNav.Screen name="dashboard" component={Dashboard}></TabNav.Screen>
                 {/* <TabNav.Screen name="apicalling" component={ApiCalling}></TabNav.Screen> */}
-                {/* <TabNav.Screen name="apicalling" component={ApiCallingMultiple}></TabNav.Screen> */}
-                <TabNav.Screen name="apicalling" component={JsonServerAPI}></TabNav.Screen>
+                <TabNav.Screen name="apicalling" component={ApiCallingMultiple}></TabNav.Screen>
+                {/* <TabNav.Screen name="apicalling" component={JsonServerAPI}></TabNav.Screen> */}
 
 
             </TabNav.Navigator>

@@ -7,43 +7,22 @@ export default function JsonServerAPI() {
     const getApiData = async () => {
         const data = await fetch("http://192.168.1.11:2000/user");
         const parsedData = await data.json();
-        if (filterData.length > 0) {
-            const filter = parsedData.filter((i) => i.Name == filterData)
-            setData(filter);
-        } else {
-            setData(parsedData)
-        }
+        setData(parsedData)
+        console.warn(parsedData,"console")
+
 
     }
 
     const DeleteApi = async (id) => {
-        await fetch(`http://192.168.1.11:2000/user/${id}`,{
-            method:"DELETE"
+        await fetch(`http://192.168.1.11:2000/user/${id}`, {
+            method: "DELETE"
         });
         getApiData()
     }
     useEffect(() => {
         getApiData()
-    }, [filterData])
+    }, [])
 
-    const postData = async () => {
-        const bodys = {
-            Name: "Janardan",
-            Email: "Janardan@gmail.com",
-            Age: 35,
-            Mobile: 80800494027
-        }
-        const res = await fetch('http://192.168.1.11:2000/user', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(bodys)
-        })
-        const result = await res.json()
-        console.warn(result)
-        getApiData()
-    }
 
     return (
         <View  >
@@ -95,6 +74,23 @@ const style = StyleSheet.create({
         padding: 20,
         borderWidth: 1
     }
-    ,
+    
 
 })
+const postData = async () => {
+    const bodys = {
+        Name: "Janardan",
+        Email: "Janardan@gmail.com",
+        Age: 35,
+        Mobile: 80800494027
+    }
+    const res = await fetch('http://192.168.1.11:2000/user', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bodys)
+    })
+    const result = await res.json()
+    getApiData()
+}

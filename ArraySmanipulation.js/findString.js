@@ -44,4 +44,4 @@
 // }
 
 
-console.log(catMouse(1,3,2))
+// console.log(catMouse(1,3,2))

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { View, Text, ScrollView, FlatList } from 'react-native'
+import { View, Text, ScrollView, FlatList, TextInput } from 'react-native'
 
 export const ApiCalling = () => {
     const [apiData, setApiData] = useState();
@@ -38,6 +38,7 @@ export const ApiCalling = () => {
 
 export const ApiCallingMultiple = () => {
     const [multipleData, setMultipleData] = useState([])
+    const [text, setText] = useState()
     const getApiData = async () => {
 
         const data = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -50,12 +51,15 @@ export const ApiCallingMultiple = () => {
     return (
         // Using Flat List 
         <View style={{ margin: 20 }}>
+            <TextInput   placeholder="Search" onChangeText={(text) =>
+                setText(text)
 
+            } />
             {
                 multipleData ?
 
                     <FlatList
-                        data={multipleData}
+                        data={multipleData.filter((i) => i.body.toLowerCase().includes(text))}
                         renderItem={({ item }) =>
                             <View>
                                 <Text>{item.id}</Text>
